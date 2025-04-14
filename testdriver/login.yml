@@ -1,0 +1,21 @@
+version: 4.2.27
+session: 67fcfd247a5ef5f6bdccd41d
+steps:
+  - prompt: login with username "ikorsun+1@callfire.com" and password "Dialer1!"
+    commands:
+      - command: hover-text
+        text: EMAIL OR USERNAME
+        description: label for email input field
+        action: click
+      - command: type
+        text: ikorsun+1@callfire.com
+      - command: hover-text
+        text: PASSWORD
+        description: label for password input field
+        action: click
+      - command: type
+        text: Dialer1!
+      - command: hover-text
+        text: LOG IN
+        description: login button below password field
+        action: click
