@@ -1,0 +1,28 @@
+version: 4.2.27
+session: 67fcfec67a5ef5f6bdccd42a
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: >-
+      Assert that the "Become a Registered Sender!" message is visible on the
+      page.
+    commands:
+      - command: assert
+        expect: the "Become a Registered Sender!" message is visible
+  - prompt: Ensure the three informational boxes
+    commands:
+      - command: assert
+        expect: >-
+          1. Business Info: Company EIN, industry, and registered street
+          address.
+      - command: assert
+        expect: >-
+          2. Use Case and Opt-In: How you intend to use texting and how you
+          collect consent.
+      - command: assert
+        expect: >-
+          3. Approval Time: Typically less than 1 business day; however errors
+          in submissions can take up to 3 days to resolve. Please ensure your
+          information is correct before submitting.
